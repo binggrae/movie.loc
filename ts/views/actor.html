@@ -1,0 +1,33 @@
+<table class="table table-striped table-bordered">
+    <tr>
+        <th>Id</th>
+        <td>{{vm.actor.id}}</td>
+    </tr>
+    <tr>
+        <th>name</th>
+        <td>{{vm.actor.name}}</td>
+    </tr>
+    <tr>
+        <th>Picture</th>
+        <td><img ng-src="{{vm.actor.picture}}" alt="{{vm.actor.title}}"/></td>
+    </tr>
+    <tr>
+        <th>Birthday</th>
+        <td>{{vm.actor.birthday}}</td>
+    </tr>
+
+    <tr>
+        <th>Films</th>
+        <td>
+            <ul>
+                <li ng-repeat="film in vm.actor.films">
+                    <span>
+                        <img ng-src="{{film.picture}}" alt="{{film.title}}"/>
+                        <a ui-sref="item({id:film.id})">{{film.title}}</a>
+                    </span>
+                </li>
+            </ul>
+        </td>
+    </tr>
+</table>
+

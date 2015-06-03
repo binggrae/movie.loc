@@ -1,0 +1,44 @@
+<table class="table table-striped table-bordered">
+    <tr>
+        <th>Id</th>
+        <td>{{vm.item.id}}</td>
+    </tr>
+    <tr>
+        <th>Title</th>
+        <td>{{vm.item.title}}</td>
+    </tr>
+    <tr>
+        <th>Picture</th>
+        <td><img ng-src="{{vm.item.picture}}" alt="{{vm.item.title}}"/></td>
+    </tr>
+    <tr>
+        <th>Overview</th>
+        <td>{{vm.item.overview}}</td>
+    </tr>
+    <tr>
+        <th>Release date</th>
+        <td>{{vm.item.release_date}}</td>
+    </tr>
+    <tr>
+        <th>Popularity</th>
+        <td>{{vm.item.popularity}}</td>
+    </tr>
+    <tr>
+        <th>Vote</th>
+        <td>{{vm.item.vote_average}}</td>
+    </tr>
+    <tr>
+        <th>Actors</th>
+        <td>
+            <ul>
+                <li ng-repeat="actor in vm.item.actors">
+                    <span>
+                        <img ng-src="{{actor.picture}}" alt="{{actor.name}}"/>
+                        <a ui-sref="actor({id:actor.id})">{{actor.name}}</a>
+                    </span>
+                </li>
+            </ul>
+        </td>
+    </tr>
+</table>
+

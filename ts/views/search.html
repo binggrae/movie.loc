@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form ng-submit="vm.search()">
+                <div class="input-group">
+                    <input type="text" ng-model="vm.query" class="form-control" placeholder="Search for...">
+                    <span class="input-group-btn">
+                        <input class="btn btn-default" type="submit" value="Go">
+                    </span>
+                </div>
+            </form>
+            <table id="table-wrapper" class="table result" ng-show="vm.movies.length">
+                <thead>
+                <tr ng-mousedown="$event.preventDefault()" onselectstart="return false">
+                    <th ng-repeat="head in vm.tablehead" ng-click="vm.sortReorder(head.name,$event)"
+                        ng-class="{'sort-asc':head.sort>0,'sort-desc':head.sort<0}">{{head.title}}
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="movie in vm.movies | orderBy:vm.order">
+                    <td><img ng-src="{{movie.picture}}" alt="{{movie.title}}"/></td>
+                    <td><a ui-sref="item({id:movie.id})">{{movie.title}}</a></td>
+                    <td>{{movie.popularity}}</td>
+                    <td>{{movie.vote_average}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

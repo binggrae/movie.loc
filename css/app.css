@@ -1,0 +1,8 @@
+#table-wrapper thead th {
+    padding-left: 20px;
+    background: url(../pic/sort-def.gif) no-repeat center left;
+    cursor: pointer;
+}
+
+#table-wrapper thead th.sort-asc {background-image: url(../pic/sort-asc.gif);}
+#table-wrapper thead th.sort-desc {background-image: url(../pic/sort-desc.gif);}
